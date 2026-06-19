@@ -653,6 +653,20 @@ function compute() {
 });
 
 compute();
+
+// ── Auto-altura para iframe ──────────────────────────────
+function sendHeight() {
+  const h = document.documentElement.scrollHeight;
+  window.parent.postMessage({ type: 'simHeight', height: h }, '*');
+}
+// Enviar al cargar
+window.addEventListener('load', sendHeight);
+// Enviar cada vez que el usuario interactúa (sliders, chips, etc.)
+document.addEventListener('input', sendHeight);
+document.addEventListener('change', sendHeight);
+document.addEventListener('click', sendHeight);
+// Enviar si cambia el tamaño de ventana
+window.addEventListener('resize', sendHeight);
 </script>
 </body>
 </html>
