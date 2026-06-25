@@ -223,6 +223,14 @@
     cursor: pointer;
   }
 
+  .rent-note {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin: -6px 0 14px;
+  }
+  .rent-note b { color: rgba(255,255,255,.75); font-weight: 700; }
+
   .uf-edit {
     display: flex;
     align-items: center;
@@ -401,7 +409,7 @@
   <div class="sim-header">
     <span class="eyebrow">Herramienta · Crédito + Inversión</span>
     <h2>Simula tu inversión <em>en números reales.</em></h2>
-    <p>Elige una unidad y ajusta los supuestos. Define el financiamiento y ve cuánto cubre el arriendo y cuánto rentas.</p>
+    <p>Elige una unidad y ajusta los supuestos. Define el financiamiento y ve cuánto cubre el arriendo y cuánto aportas tú.</p>
   </div>
 
   <!-- Unit chips -->
@@ -420,8 +428,8 @@
         <div class="group-label">Financiamiento (crédito)</div>
 
         <div class="ctrl">
-          <div class="ctrl-lab"><span>Pie inicial al contado</span><span class="val" id="piIniVal">10%</span></div>
-          <input type="range" id="piIni" min="0" max="10" step="1" value="10">
+          <div class="ctrl-lab"><span>Pie inicial al contado</span><span class="val" id="piIniVal">5%</span></div>
+          <input type="range" id="piIni" min="0" max="10" step="1" value="5">
         </div>
 
         <div class="ctrl">
@@ -430,8 +438,8 @@
         </div>
 
         <div class="ctrl">
-          <div class="ctrl-lab"><span>Tasa crédito anual</span><span class="val" id="tasaVal">3,82%</span></div>
-          <input type="range" id="tasa" min="3" max="6.5" step="0.01" value="3.82">
+          <div class="ctrl-lab"><span>Tasa crédito anual</span><span class="val" id="tasaVal">3,96%</span></div>
+          <input type="range" id="tasa" min="3" max="6.5" step="0.01" value="3.96">
         </div>
 
         <div class="ctrl">
@@ -449,14 +457,10 @@
         <div class="group-label">Arriendo e inversión</div>
 
         <div class="ctrl">
-          <div class="ctrl-lab"><span>Arriendo mensual estimado</span><span class="val" id="rentVal">UF 41,0</span></div>
-          <input type="range" id="rent" min="20" max="55" step="0.5" value="41">
+          <div class="ctrl-lab"><span>Arriendo mensual estimado</span><span class="val" id="rentVal">UF 29,7</span></div>
+          <input type="range" id="rent" min="20" max="55" step="0.5" value="29.7">
         </div>
-
-        <div class="ctrl">
-          <div class="ctrl-lab"><span>Plusvalía anual estimada</span><span class="val" id="apprVal">4,0%</span></div>
-          <input type="range" id="appr" min="0" max="8" step="0.5" value="4">
-        </div>
+        <div class="rent-note" id="rentNote"></div>
       </div>
 
       <div class="uf-edit">
@@ -474,30 +478,30 @@
 
         <div class="feature-block">
           <div class="k">Dividendo mensual estimado</div>
-          <div class="big-num" id="oDiv">UF 42,0 <small id="oDivClp">· $1.713.455/mes</small></div>
-          <div class="sub-line" id="oCred">Crédito hipotecario: UF 8.994 (80%)</div>
+          <div class="big-num" id="oDiv">UF 32,9 <small id="oDivClp">· $1.343.543/mes</small></div>
+          <div class="sub-line" id="oCred">Crédito hipotecario: UF 7.052 (85%)</div>
         </div>
 
         <div class="orows">
           <div class="ocell">
             <div class="k">Precio total</div>
-            <div class="v acc" id="oTotal">UF 11.242</div>
-            <div class="vsub" id="oTotalClp">$458.538.696</div>
+            <div class="v acc" id="oTotal">UF 8.815</div>
+            <div class="vsub" id="oTotalClp">$359.546.220</div>
           </div>
           <div class="ocell">
             <div class="k">Pie inicial hoy</div>
-            <div class="v" id="oPieIni">UF 1.124</div>
-            <div class="vsub" id="oPieIniClp">$45.853.870</div>
+            <div class="v" id="oPieIni">UF 441</div>
+            <div class="vsub" id="oPieIniClp">$17.977.311</div>
           </div>
           <div class="ocell">
             <div class="k">Pie en cuotas</div>
-            <div class="v" id="oPieCta">UF 1.124</div>
-            <div class="vsub" id="oPieCtaCuota">≈ UF 35,1 × 32</div>
+            <div class="v" id="oPieCta">UF 882</div>
+            <div class="vsub" id="oPieCtaCuota">≈ UF 27,5 × 32</div>
           </div>
           <div class="ocell">
             <div class="k">Crédito (saldo)</div>
-            <div class="v" id="oCredUF">UF 8.994</div>
-            <div class="vsub" id="oCredClp">$366.830.957</div>
+            <div class="v" id="oCredUF">UF 7.052</div>
+            <div class="vsub" id="oCredClp">$287.636.976</div>
           </div>
         </div>
       </div>
@@ -508,39 +512,39 @@
 
         <div class="cover">
           <div class="track">
-            <div class="fill" id="coverFill" style="width:98%">98%</div>
+            <div class="fill" id="coverFill" style="width:90%">90%</div>
           </div>
           <div class="cover-legend">
-            <span>Arriendo cubre <b id="legArr">UF 41,0</b></span>
-            <span>Tu aporte <b id="legAp">UF 1,0</b>/mes</span>
+            <span>Arriendo cubre <b id="legArr">UF 29,7</b></span>
+            <span>Tu aporte <b id="legAp">UF 3,2</b>/mes</span>
           </div>
         </div>
 
         <div class="orows">
           <div class="ocell">
             <div class="k">Arriendo mensual</div>
-            <div class="v acc" id="oArr">UF 41,0</div>
-            <div class="vsub" id="oArrClp">$1.672.308 · lo paga tu arrendatario</div>
+            <div class="v acc" id="oArr">UF 29,7</div>
+            <div class="vsub" id="oArrClp">$1.210.903 · lo paga tu arrendatario</div>
           </div>
           <div class="ocell">
             <div class="k">Tu aporte mensual</div>
-            <div class="v" id="oAp">UF 1,0</div>
-            <div class="vsub" id="oApClp">$41.147</div>
+            <div class="v" id="oAp">UF 3,2</div>
+            <div class="vsub" id="oApClp">$130.521</div>
           </div>
           <div class="ocell">
             <div class="k">Cap rate (renta bruta)</div>
-            <div class="v acc" id="oCap">4,6%</div>
+            <div class="v acc" id="oCap">4,3%</div>
             <div class="vsub">sobre el valor de la propiedad</div>
           </div>
           <div class="ocell">
-            <div class="k">Plusvalía est. a 2029</div>
-            <div class="v" id="oPlus">+UF 1.553</div>
-            <div class="vsub" id="oPlusPct">≈ +13,8%</div>
+            <div class="k">Cobertura del dividendo</div>
+            <div class="v" id="oCover">90%</div>
+            <div class="vsub">pagado por el arrendatario</div>
           </div>
         </div>
       </div>
 
-      <p class="disclaimer"><strong>Cifras referenciales.</strong> Estimaciones sobre supuestos editables; no constituyen oferta, proyección garantizada ni asesoría financiera o de inversión personalizada. El dividendo se calcula sobre capital e interés (no incluye seguros ni gastos operacionales); el real depende del banco. Arriendo, plusvalía y cap rate dependen del mercado y no están garantizados. Valores en UF; el equivalente en pesos varía según el valor diario de la UF.</p>
+      <p class="disclaimer"><strong>Cifras referenciales.</strong> Estimaciones sobre supuestos editables; no constituyen oferta, proyección garantizada ni asesoría financiera o de inversión personalizada. El dividendo se calcula sobre capital e interés (no incluye seguros ni gastos operacionales); el real depende del banco. Arriendo y cap rate dependen del mercado y no están garantizados. Valores en UF; el equivalente en pesos varía según el valor diario de la UF.</p>
 
     </div>
   </div>
@@ -548,14 +552,12 @@
 
 <script>
 const UFTODAY = 40788;
-const YEARS = 3.3;
 const N_CUOTAS = 32;
 
 const UNITS = [
-  {id:'entrada', name:'2D + 2B',        sub:'Piso bajo · entrada',    lista:7990,  eb:550, rent:29.7},
-  {id:'prom',    name:'2D + 2B',        sub:'Promedio del proyecto',  lista:8265,  eb:550, rent:29.7},
-  {id:'g',       name:'2D + 2B G',      sub:'Mejor orientación',      lista:8740,  eb:550, rent:30.9},
-  {id:'azotea',  name:'2D + 2B · Azotea', sub:'Azotea privada',       lista:10692, eb:550, rent:40.9},
+  {id:'mariposa', name:'2D2B Mariposa',           sub:'Planta mariposa · entrada',           lista:7990,  eb:550, rent:29.7},
+  {id:'trad',     name:'2D2B Tradicional',        sub:'Planta tradicional',                  lista:8265,  eb:550, rent:29.7},
+  {id:'tradg',    name:'2D2B Tradicional grande', sub:'Planta tradicional · más superficie', lista:8740,  eb:550, rent:30.9},
 ];
 let cur = UNITS[1];
 
@@ -592,7 +594,6 @@ function compute() {
   const anios = +document.getElementById('anio').value;
   const incEB = document.getElementById('eb').checked;
   const rent  = +document.getElementById('rent').value;
-  const appr  = +document.getElementById('appr').value;
   const uf    = parseUF();
 
   // Update labels
@@ -601,7 +602,14 @@ function compute() {
   document.getElementById('tasaVal').textContent  = tasa.toLocaleString('es-CL',{minimumFractionDigits:2,maximumFractionDigits:2}) + '%';
   document.getElementById('anioVal').textContent  = anios + ' años';
   document.getElementById('rentVal').textContent  = 'UF ' + rent.toLocaleString('es-CL',{minimumFractionDigits:1,maximumFractionDigits:1});
-  document.getElementById('apprVal').textContent  = appr.toLocaleString('es-CL',{minimumFractionDigits:1,maximumFractionDigits:1}) + '%';
+
+  // Rent note
+  const rentNote = document.getElementById('rentNote');
+  if (rent >= 35) {
+    rentNote.innerHTML = '<b>Arriendo alto:</b> considera que el valor de mercado puede variar.';
+  } else {
+    rentNote.innerHTML = '';
+  }
 
   const lista     = cur.lista;
   const eb        = incEB ? cur.eb : 0;
@@ -615,9 +623,6 @@ function compute() {
   const covered = Math.min(100, rent / div * 100);
   const aporte  = Math.max(0, div - rent);
   const cap     = rent * 12 / lista * 100;
-  const future  = total * Math.pow(1 + appr / 100, YEARS);
-  const plus    = future - total;
-  const plusPct = (future / total - 1) * 100;
 
   // Crédito card
   document.getElementById('oDiv').innerHTML = `UF ${div.toLocaleString('es-CL',{minimumFractionDigits:1,maximumFractionDigits:1})} <small id="oDivClp">· ${fCLP(div*uf)}/mes</small>`;
@@ -642,11 +647,10 @@ function compute() {
   document.getElementById('oAp').textContent    = 'UF ' + aporte.toLocaleString('es-CL',{minimumFractionDigits:1,maximumFractionDigits:1});
   document.getElementById('oApClp').textContent = fCLP(aporte*uf);
   document.getElementById('oCap').textContent   = cap.toLocaleString('es-CL',{minimumFractionDigits:1,maximumFractionDigits:1}) + '%';
-  document.getElementById('oPlus').textContent  = '+' + fUF0(plus);
-  document.getElementById('oPlusPct').textContent = '≈ +' + plusPct.toLocaleString('es-CL',{minimumFractionDigits:1,maximumFractionDigits:1}) + '%';
+  document.getElementById('oCover').textContent = covered.toFixed(0) + '%';
 }
 
-['piIni','piCta','tasa','anio','eb','rent','appr','uf'].forEach(id => {
+['piIni','piCta','tasa','anio','eb','rent','uf'].forEach(id => {
   const el = document.getElementById(id);
   el.addEventListener('input', compute);
   el.addEventListener('change', compute);
@@ -659,13 +663,10 @@ function sendHeight() {
   const h = document.documentElement.scrollHeight;
   window.parent.postMessage({ type: 'simHeight', height: h }, '*');
 }
-// Enviar al cargar
 window.addEventListener('load', sendHeight);
-// Enviar cada vez que el usuario interactúa (sliders, chips, etc.)
 document.addEventListener('input', sendHeight);
 document.addEventListener('change', sendHeight);
 document.addEventListener('click', sendHeight);
-// Enviar si cambia el tamaño de ventana
 window.addEventListener('resize', sendHeight);
 </script>
 </body>
