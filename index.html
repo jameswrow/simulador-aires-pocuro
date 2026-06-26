@@ -75,9 +75,7 @@
   }
 
   /* ── Unit chips ────────────────────────────── */
-  .unit-section {
-    margin-bottom: 28px;
-  }
+  .unit-section { margin-bottom: 28px; }
   .group-label {
     font-size: 10.5px;
     font-weight: 700;
@@ -86,11 +84,7 @@
     color: var(--green);
     margin-bottom: 12px;
   }
-  .chip-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
   .chip {
     background: var(--bg-card2);
     border: 1px solid var(--border);
@@ -114,15 +108,8 @@
     display: block;
     margin-top: 2px;
   }
-  .chip:hover {
-    border-color: var(--green);
-    color: var(--white);
-  }
-  .chip.on {
-    background: var(--green-dim);
-    border-color: var(--green);
-    color: var(--white);
-  }
+  .chip:hover { border-color: var(--green); color: var(--white); }
+  .chip.on { background: var(--green-dim); border-color: var(--green); color: var(--white); }
   .chip.on small { color: rgba(255,255,255,.6); }
 
   /* ── Main grid ────────────────────────────── */
@@ -146,27 +133,17 @@
     flex-direction: column;
     gap: 6px;
   }
-
-  .ctrl-group {
-    margin-bottom: 10px;
-  }
+  .ctrl-group { margin-bottom: 10px; }
   .ctrl-group:last-child { margin-bottom: 0; }
-
-  .ctrl {
-    margin-bottom: 16px;
-  }
+  .ctrl { margin-bottom: 16px; }
   .ctrl:last-child { margin-bottom: 0; }
-
   .ctrl-lab {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 7px;
   }
-  .ctrl-lab span:first-child {
-    font-size: 13px;
-    color: var(--muted);
-  }
+  .ctrl-lab span:first-child { font-size: 13px; color: var(--muted); }
   .ctrl-lab .val {
     font-size: 13px;
     font-weight: 700;
@@ -186,20 +163,16 @@
   }
   input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 18px;
-    height: 18px;
+    width: 18px; height: 18px;
     background: var(--green);
     border-radius: 50%;
     border: 2px solid var(--bg-card);
     box-shadow: 0 0 0 1px var(--green);
     transition: transform .15s;
   }
-  input[type=range]::-webkit-slider-thumb:hover {
-    transform: scale(1.15);
-  }
+  input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   input[type=range]::-moz-range-thumb {
-    width: 18px;
-    height: 18px;
+    width: 18px; height: 18px;
     background: var(--green);
     border-radius: 50%;
     border: 2px solid var(--bg-card);
@@ -214,13 +187,25 @@
     color: var(--muted);
     cursor: pointer;
     margin-top: 4px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
   .checkrow input[type=checkbox] {
-    width: 16px;
-    height: 16px;
+    width: 16px; height: 16px;
     accent-color: var(--green);
     cursor: pointer;
+  }
+  .checkrow input[type=checkbox]:disabled { opacity: .5; cursor: default; }
+
+  .eb-note {
+    display: none;
+    font-size: 11.5px;
+    color: var(--green-lite);
+    line-height: 1.45;
+    margin: 2px 0 12px;
+    padding: 10px 12px;
+    border: 1px solid rgba(21,150,118,.32);
+    border-radius: var(--radius-sm);
+    background: rgba(21,150,118,.09);
   }
 
   .rent-note {
@@ -254,16 +239,10 @@
     outline: none;
     transition: border-color .2s;
   }
-  .uf-edit input:focus {
-    border-color: var(--green);
-  }
+  .uf-edit input:focus { border-color: var(--green); }
 
   /* ── Output panel ─────────────────────────── */
-  .sim-out {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
+  .sim-out { display: flex; flex-direction: column; gap: 16px; }
 
   .ocard {
     background: var(--bg-card);
@@ -271,7 +250,6 @@
     border-radius: var(--radius);
     padding: 24px;
   }
-
   .ctitle {
     display: flex;
     align-items: center;
@@ -284,8 +262,7 @@
     margin-bottom: 18px;
   }
   .ctitle .n {
-    width: 22px;
-    height: 22px;
+    width: 22px; height: 22px;
     background: var(--green);
     color: #fff;
     border-radius: 50%;
@@ -297,10 +274,7 @@
     flex-shrink: 0;
   }
 
-  /* big number */
-  .feature-block {
-    margin-bottom: 18px;
-  }
+  .feature-block { margin-bottom: 18px; }
   .feature-block .k {
     font-size: 11px;
     font-weight: 700;
@@ -322,13 +296,8 @@
     color: var(--muted);
     margin-left: 6px;
   }
-  .sub-line {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 6px;
-  }
+  .sub-line { font-size: 12px; color: var(--muted); margin-top: 6px; }
 
-  /* metric rows */
   .orows {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -358,10 +327,7 @@
     font-variant-numeric: tabular-nums;
   }
 
-  /* coverage bar */
-  .cover {
-    margin-bottom: 16px;
-  }
+  .cover { margin-bottom: 16px; }
   .track {
     height: 28px;
     background: var(--bg-card2);
@@ -391,7 +357,6 @@
   }
   .cover-legend b { color: var(--white); font-weight: 700; }
 
-  /* disclaimer */
   .disclaimer {
     font-size: 11px;
     color: rgba(255,255,255,.3);
@@ -412,16 +377,13 @@
     <p>Elige una unidad y ajusta los supuestos. Define el financiamiento y ve cuánto cubre el arriendo y cuánto aportas tú.</p>
   </div>
 
-  <!-- Unit chips -->
   <div class="unit-section">
     <div class="group-label">Unidad</div>
     <div class="chip-row" id="chips"></div>
   </div>
 
-  <!-- Grid -->
   <div class="sim-grid">
 
-    <!-- Controls -->
     <div class="sim-controls">
 
       <div class="ctrl-group">
@@ -449,8 +411,9 @@
 
         <label class="checkrow">
           <input type="checkbox" id="eb" checked>
-          Incluir estacionamiento + bodega (+550 UF)
+          <span id="ebLabel">Incluir estacionamiento + bodega (+550 UF)</span>
         </label>
+        <div class="eb-note" id="ebNote"></div>
       </div>
 
       <div class="ctrl-group">
@@ -469,10 +432,8 @@
 
     </div>
 
-    <!-- Outputs -->
     <div class="sim-out">
 
-      <!-- Card 1: Crédito -->
       <div class="ocard">
         <div class="ctitle"><span class="n">1</span> Tu crédito y dividendo</div>
 
@@ -494,9 +455,8 @@
             <div class="vsub" id="oPieIniClp">$17.977.311</div>
           </div>
           <div class="ocell">
-            <div class="k">Pie en cuotas</div>
+            <div class="k">Pie en hasta 40 cuotas</div>
             <div class="v" id="oPieCta">UF 882</div>
-            <div class="vsub" id="oPieCtaCuota">≈ UF 27,5 × 32</div>
           </div>
           <div class="ocell">
             <div class="k">Crédito (saldo)</div>
@@ -506,7 +466,6 @@
         </div>
       </div>
 
-      <!-- Card 2: Inversión -->
       <div class="ocard">
         <div class="ctitle"><span class="n">2</span> Tu inversión</div>
 
@@ -555,13 +514,12 @@ const UFTODAY = 40788;
 const N_CUOTAS = 32;
 
 const UNITS = [
-  {id:'mariposa', name:'2D2B Mariposa',           sub:'Planta mariposa · entrada',           lista:7990,  eb:550, rent:29.7},
-  {id:'trad',     name:'2D2B Tradicional',        sub:'Planta tradicional',                  lista:8265,  eb:550, rent:29.7},
-  {id:'tradg',    name:'2D2B Tradicional grande', sub:'Planta tradicional · más superficie', lista:8740,  eb:550, rent:30.9},
+  {id:'mariposa', name:'2D2B Mariposa',           sub:'Planta mariposa · entrada',           lista:7990, eb:550, rent:29.7, ebIncl:true},
+  {id:'trad',     name:'2D2B Tradicional',        sub:'Planta tradicional',                  lista:8265, eb:550, rent:29.7, ebIncl:false},
+  {id:'tradg',    name:'2D2B Tradicional grande', sub:'Planta tradicional · más superficie', lista:8740, eb:550, rent:30.9, ebIncl:false},
 ];
 let cur = UNITS[1];
 
-const fUF1 = n => 'UF ' + n.toLocaleString('es-CL',{minimumFractionDigits:1,maximumFractionDigits:1});
 const fUF0 = n => 'UF ' + Math.round(n).toLocaleString('es-CL');
 const fCLP = n => '$' + Math.round(n).toLocaleString('es-CL');
 const parseUF = () => {
@@ -576,7 +534,7 @@ UNITS.forEach((u) => {
   const c = document.createElement('button');
   c.className = 'chip' + (u.id === cur.id ? ' on' : '');
   c.dataset.id = u.id;
-  c.innerHTML = `${u.name}<small>${u.sub} · ${fUF0(u.lista)}</small>`;
+  c.innerHTML = `${u.name}<small>${u.sub} · ${fUF0(u.lista + (u.ebIncl ? 0 : 0))}</small>`;
   c.addEventListener('click', () => {
     cur = u;
     document.querySelectorAll('#chips .chip').forEach(x => x.classList.remove('on'));
@@ -592,9 +550,29 @@ function compute() {
   const piCta = +document.getElementById('piCta').value;
   const tasa  = +document.getElementById('tasa').value;
   const anios = +document.getElementById('anio').value;
-  const incEB = document.getElementById('eb').checked;
   const rent  = +document.getElementById('rent').value;
   const uf    = parseUF();
+
+  // Manejo del checkbox de estacionamiento
+  const ebIncluded = cur.ebIncl === true;
+  const ebBox = document.getElementById('eb');
+  if (ebIncluded) {
+    ebBox.checked = true;
+    ebBox.disabled = true;
+  } else {
+    ebBox.disabled = false;
+  }
+  document.getElementById('ebLabel').textContent = ebIncluded
+    ? 'Estacionamiento y bodega incluidos en el precio'
+    : 'Incluir estacionamiento + bodega (+550 UF)';
+  const ebNoteEl = document.getElementById('ebNote');
+  ebNoteEl.textContent = ebIncluded
+    ? 'Esta tipología está en oferta con estacionamiento y bodega incluidos en el precio.'
+    : '';
+  ebNoteEl.style.display = ebIncluded ? 'block' : 'none';
+
+  const incEB = ebBox.checked;
+  const eb = ebIncluded ? 0 : (incEB ? cur.eb : 0);
 
   // Update labels
   document.getElementById('piIniVal').textContent = piIni + '%';
@@ -603,20 +581,15 @@ function compute() {
   document.getElementById('anioVal').textContent  = anios + ' años';
   document.getElementById('rentVal').textContent  = 'UF ' + rent.toLocaleString('es-CL',{minimumFractionDigits:1,maximumFractionDigits:1});
 
-  // Rent note
+  // Nota arriendo
   const rentNote = document.getElementById('rentNote');
-  if (rent >= 35) {
-    rentNote.innerHTML = '<b>Arriendo alto:</b> considera que el valor de mercado puede variar.';
-  } else {
-    rentNote.innerHTML = '';
-  }
+  const avgR = 'UF ' + cur.rent.toLocaleString('es-CL',{minimumFractionDigits:1,maximumFractionDigits:1});
+  rentNote.innerHTML = 'Arriendo promedio de referencia para <b>' + cur.name + '</b>: ~' + avgR + '/mes, considerando estacionamiento y bodega incluidos.';
 
   const lista     = cur.lista;
-  const eb        = incEB ? cur.eb : 0;
   const total     = lista + eb;
   const pieIniUF  = total * piIni / 100;
   const pieCtaUF  = total * piCta / 100;
-  const cuotaUF   = pieCtaUF / N_CUOTAS;
   const creditoUF = total - pieIniUF - pieCtaUF;
   const r = tasa / 100 / 12, n = anios * 12;
   const div = r > 0 ? creditoUF * r / (1 - Math.pow(1 + r, -n)) : creditoUF / n;
@@ -632,7 +605,6 @@ function compute() {
   document.getElementById('oPieIni').textContent   = fUF0(pieIniUF);
   document.getElementById('oPieIniClp').textContent= fCLP(pieIniUF*uf);
   document.getElementById('oPieCta').textContent   = fUF0(pieCtaUF);
-  document.getElementById('oPieCtaCuota').textContent = `≈ UF ${cuotaUF.toLocaleString('es-CL',{minimumFractionDigits:1,maximumFractionDigits:1})} × ${N_CUOTAS}`;
   document.getElementById('oCredUF').textContent  = fUF0(creditoUF);
   document.getElementById('oCredClp').textContent = fCLP(creditoUF*uf);
 
