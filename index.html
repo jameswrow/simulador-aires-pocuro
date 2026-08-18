@@ -421,7 +421,7 @@
 
         <div class="ctrl">
           <div class="ctrl-lab"><span>Arriendo mensual estimado</span><span class="val" id="rentVal">UF 29,7</span></div>
-          <input type="range" id="rent" min="20" max="55" step="0.5" value="29.7">
+          <input type="range" id="rent" min="15" max="55" step="0.5" value="29.7">
         </div>
         <div class="rent-note" id="rentNote"></div>
       </div>
@@ -514,11 +514,13 @@ const UFTODAY = 40788;
 const N_CUOTAS = 32;
 
 const UNITS = [
+  {id:'uno1',     name:'1D1B Modelo 1',           sub:'Planta 51,5 m²',                      lista:5990, eb:550, rent:19.5, ebIncl:false},
+  {id:'uno2',     name:'1D1B Modelo 2',           sub:'Planta 55 m²',                        lista:6409, eb:550, rent:20.5, ebIncl:false},
   {id:'mariposa', name:'2D2B Mariposa',           sub:'Planta mariposa · entrada',           lista:7990, eb:550, rent:29.7, ebIncl:true},
   {id:'trad',     name:'2D2B Tradicional',        sub:'Planta tradicional',                  lista:8265, eb:550, rent:29.7, ebIncl:false},
   {id:'tradg',    name:'2D2B Tradicional grande', sub:'Planta tradicional · más superficie', lista:8740, eb:550, rent:30.9, ebIncl:false},
 ];
-let cur = UNITS[1];
+let cur = UNITS.find(u => u.id === 'trad') || UNITS[0];
 
 const fUF0 = n => 'UF ' + Math.round(n).toLocaleString('es-CL');
 const fCLP = n => '$' + Math.round(n).toLocaleString('es-CL');
